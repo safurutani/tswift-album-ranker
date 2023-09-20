@@ -1,0 +1,383 @@
+:root{
+    --debut-teal:#27ACC5;
+    --debut-skin:#F2DDB6;
+    --debut-green:#2B4A3C;
+    --debut-tan:#B89271;
+    --debut-black:#323625;
+    
+    --fearless-gold:#D3B778;
+    --fearless-brown:#835017;
+    --fearless-creme:#F0DFCB;
+    --fearless-dark-brown:#53330A;
+    --fearless-tan:#D7B073;
+    
+    --lover-pink:#EAA2C3;
+    --lover-light-pink:#F3CBDE;
+    --lover-peach:#FBDFCC;
+    --lover-blue:#70B4D9;
+    --lover-yellow:#FEF2CF;
+    
+    --evermore-orange:#e49262;
+    --evermore-brown:#73554d;
+    --evermore-rust:#592823;
+    --evermore-light-rust:#9c4c2b;
+    --evermore-beige:#d3b6a4;
+    
+    --reputation-black:#060606;
+    --reputation-dark-gray:#4C4C4C;
+    --reputation-gray:#6D6D6D;
+    --reputation-light-gray:#9C9C9C;
+    --reputation-white:#E3E3E3;
+    
+    --speaknow-magenta:#8D3B71;
+    --speaknow-dark-purple:#3B1E32;
+    --speaknow-light-purple:#B69BB6;
+    --speaknow-purple:#522D6A;
+    --speaknow-peach:#E2B8A0;
+    
+    --red-beige:#ACA08C;
+    --red-navy:#21203A;
+    --red-light:#9E2141;
+    --red-dark:#730A03;
+    --red-white:#E3DDCF;
+    
+    --folklore-gray:#616161;
+    --folklore-light-gray:#C7C1BC;
+    --folklore-creme:#D8CCB6;
+    --folklore-moss:#464E27;
+    --folklore-black:#1C1C1C;
+    
+    --1989-tan:#CCBB98;
+    --1989-purple:#9B7688;
+    --1989-navy:#344455;
+    --1989-brown:#774535;
+    --1989-white:#E8E8DD;
+    
+    --midnights-navy:#0E1B48;
+    --midnights-light-blue:#819BB0;
+    --midnights-maroon:#822E34;
+    --midnights-brown:#A66B59;
+    --midnights-white:#EDECE8;
+    
+  }
+  /*Themes for the background web page*/
+  .debutWebTheme {
+    background:var(--debut-green);
+    color:var(--debut-tan);
+  }
+  .fearlessWebTheme {
+    background:var(--fearless-brown);
+    color: var(--fearless-creme);
+  }
+  .speaknowWebTheme {
+    background:var(--speaknow-purple);
+    color:var(--speaknow-peach);
+  }
+  .redWebTheme {
+    background:var(--red-beige);
+    color:var(--red-dark);
+  }
+  .web1989Theme {
+    background:var(--1989-white);
+    color:var(--1989-navy);
+  }
+  .reputationWebTheme {
+    background:var(--reputation-black);
+    color:var(--reputation-light-gray);
+  }
+  .loverWebTheme {
+    background:var(--lover-blue);
+    color:var(--lover-light-pink);
+  }
+  .folkloreWebTheme {
+    background:var(--folklore-gray);
+    color:var(--folklore-black);
+  }
+  .evermoreWebTheme {
+    background:var(--evermore-rust);
+    color:var(--evermore-orange);
+  }
+  .midnightsWebTheme {
+    background:var(--midnights-navy);
+    color:var(--midnights-brown);
+  }
+  /*Themes for the central Album content*/
+  .debutAlbumTheme {
+    background:var(--debut-teal);
+    color:var(--debut-black);
+  }
+  .fearlessAlbumTheme {
+    background:var(--fearless-gold);
+    color: var(--fearless-dark-brown);
+  }
+  .speaknowAlbumTheme {
+    background:var(--speaknow-dark-purple);
+    color:var(--speaknow-light-purple);
+  }
+  .redAlbumTheme {
+    background:var(--red-light);
+    color:var(--red-white);
+  }
+  .album1989Theme {
+    background:var(--1989-purple);
+    color:var(--1989-tan);
+  }
+  .reputationAlbumTheme {
+    background:var(--reputation-dark-gray);
+    color:var(--reputation-white);
+  }
+  .loverAlbumTheme {
+    background:var(--lover-pink);
+    color:var(--lover-yellow);
+  }
+  .folkloreAlbumTheme {
+    background:var(--folklore-light-gray);
+    color:var(--folklore-moss);
+  }
+  .evermoreAlbumTheme {
+    background:var(--evermore-brown);
+    color:var(--evermore-beige);
+  }
+  .midnightsAlbumTheme {
+    background:var(--midnights-light-blue);
+    color:var(--midnights-white);
+  }
+  
+  /*Themes for the input boxes*/
+  .debutInputTheme {
+    background:var(--debut-skin);
+    color:var(--debut-black);
+  }
+  .fearlessInputTheme {
+    background:var(--fearless-tan);
+    color:var(--fearless-dark-brown)
+  }
+  .speaknowInputTheme {
+    background:var(--speaknow-magenta);
+    color:var(--speaknow-light-purple);
+  }
+  .redInputTheme {
+    background:var(--red-navy);
+    color:var(--red-white);
+  }
+  .input1989Theme {
+    background:var(--1989-brown);
+    color:var(--1989-tan);
+  }
+  .reputationInputTheme {
+    background:var(--reputation-gray);
+    color:var(--reputation-white);
+  }
+  .loverInputTheme {
+    background:var(--lover-peach);
+    color:var(--lover-blue);
+  }
+  .folkloreInputTheme {
+    background:var(--folklore-creme);
+    color:var(--folklore-moss);
+  }
+  .evermoreInputTheme {
+    background:var(--evermore-light-rust);
+    color:var(--evermore-beige);
+  }
+  .midnightsInputTheme {
+    background:var(--midnights-maroon);
+    color:var(--midnights-white);
+  }
+  /*Themes for the album buttons getting hovered*/
+  .debutButtonHover:hover {
+    background:var(--debut-tan);
+    color:var(--debut-green);
+  }
+  .fearlessButtonHover:hover {
+    background:var(--fearless-creme);
+    color: var(--fearless-brown);
+  }
+  .speaknowButtonHover:hover {
+    background:var(--speaknow-peach);
+    color:var(--speaknow-purple);
+  }
+  .redButtonHover:hover {
+    background:var(--red-dark);
+    color:var(--red-beige);
+  }
+  .button1989Hover:hover {
+    background:var(--1989-navy);
+    color:var(--1989-white);
+  }
+  .reputationButtonHover:hover {
+    background:var(--reputation-light-gray);
+    color:var(--reputation-black);
+  }
+  .loverButtonHover:hover {
+    background:var(--lover-light-pink);
+    color:var(--lover-blue);
+  }
+  .folkloreButtonHover:hover {
+    background:var(--folklore-black);
+    color:var(--folklore-gray);
+  }
+  .evermoreButtonHover:hover {
+    background:var(--evermore-orange);
+    color:var(--evermore-rust);
+  }
+  .midnightsButtonHover:hover {
+    background:var(--midnights-brown);
+    color:var(--midnights-navy);
+  }
+  /*Themes for when you hover the submit button*/
+  .debutSubmitHover:hover {
+    background:var(--debut-black);
+    color:var(--debut-teal);
+  }
+  .fearlessSubmitHover:hover {
+    background:var(--fearless-dark-brown);
+    color: var(--fearless-gold);
+  }
+  .speaknowSubmitHover:hover {
+    background:var(--speaknow-light-purple);
+    color:var(--speaknow-dark-purple);
+  }
+  .redSubmitHover:hover {
+    background:var(--red-white);
+    color:var(--red-light);
+  }
+  .submit1989Hover:hover {
+    background:var(--1989-tan);
+    color:var(--1989-purple);
+  }
+  .reputationSubmitHover:hover {
+    background:var(--reputation-white);
+    color:var(--reputation-dark-gray);
+  }
+  .loverSubmitHover:hover {
+    background:var(--lover-yellow);
+    color:var(--lover-pink);
+  }
+  .folkloreSubmitHover:hover {
+    background:var(--folklore-moss);
+    color:var(--folklore-light-gray);
+  }
+  .evermoreSubmitHover:hover {
+    background:var(--evermore-beige);
+    color:var(--evermore-brown);
+  }
+  .midnightsSubmitHover:hover {
+    background:var(--midnights-white);
+    color:var(--midnights-light-blue);
+  }
+  
+  h1,h2 {
+    text-align:center;
+    width: auto;
+  }
+  h2 {
+    margin: auto;
+  }
+  .underline {
+    text-decoration: underline;
+  }
+  body{
+    background:var(--debut-green);
+    color:var(--debut-tan);
+    margin:auto;
+    width:100%;
+    font-family: "Quattrocento";
+    font-weight: bold;
+  }
+  #albumSelection {
+    margin: 10px;
+    justify-content:center;
+    display:flex;
+  }
+  .albumButton {
+    border: solid;
+    padding:4px;
+    margin:1px;
+  }
+  .albumButton:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .buttonContainer {
+    display:flex;
+  }
+  #album {
+    width:50%;
+    margin:auto;
+    border-radius:15px;
+    padding:15px;
+    margin-top:20px;
+    max-width:720px;
+    min-width:424px;
+  }
+  
+  .list {
+    display:flex;
+    text-align: right;
+  }
+  .song {
+    width: 50%;
+  }
+  input {
+    text-align: center;
+    width: 40px;
+    background: var(--fearless-tan);
+    color:var(--fearless-dark-brown);
+    border:solid black 1px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  #albumHeader {
+    display:flex;
+    margin:auto;
+    justify-content: center;
+  }
+  #reset {
+    text-align: center;
+    width: 80px;
+    border: 1px solid;
+    padding:4px;
+    margin: auto 0;
+  }
+  #reset:hover {
+    cursor: pointer;
+    background: red;
+    color: white;
+  }
+  #submit {
+    text-align: center;
+    width:100px;
+    padding:10px;
+    margin:auto;
+    margin-top: 20px;
+    border-radius:10px;
+  }
+  #submit:hover {
+    cursor:pointer;
+  }
+  #results {
+    min-width: 424px;
+    width: 50%;
+    margin: auto;
+    margin-top: 22px;
+  }
+  #rankings {
+    display:flex;
+    width: 20%;
+    font-size: 20px;
+    margin:auto;
+    padding: 14px;
+    min-width: 194px;
+  }
+  #resultTitles {
+    width: 95%;
+  }
+  @media (max-width: 784px) {
+    .buttonContainer {
+      display:block;
+    }
+    .albumButton {
+      text-align:center;
+    }
+  }
