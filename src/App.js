@@ -574,7 +574,7 @@ class App extends React.Component {
     render() {    
       return (
         <div className={this.state.webTheme}>
-          <h1>Taylor Swift Album Rater</h1>
+          <h1>Taylor Swift Album Ranking</h1>
           <AlbumSelection 
             classes={this.getAlbumButtonClasses()}
             handleClick1={this.buttonClick1}
