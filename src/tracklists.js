@@ -208,7 +208,7 @@ export const debutTracks = [
     "Paris",
     "High Infidelity",
     "Glitch",
-    "Would've, Could've Should've",
+    "Would've, Could've, Should've",
     "Dear Reader",
     "Hits Different"
   ];
