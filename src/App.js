@@ -498,12 +498,30 @@ class App extends React.Component {
       }
     }
     handleInputChange = (name, index, value) => {
-      this.setState((prevState) => ({
-        [name]: {
-          ...prevState[name],
-            [index]: value,
+      if(parseFloat(value) > 10) {
+        this.setState((prevState)=> ({
+          [name]: {
+            ...prevState[name],
+            [index]: 10,
           },
-      }));
+        }));
+      }
+      else if (parseFloat(value) < 0) {
+        this.setState((prevState)=> ({
+          [name]: {
+            ...prevState[name],
+            [index]: 0,
+          },
+        }));
+      }
+      else {
+        this.setState((prevState) => ({
+          [name]: {
+            ...prevState[name],
+              [index]: value,
+            },
+        }));
+      }
     }
     calculateAlbumScore = (albumName) => {
       const data = this.state[albumName];
