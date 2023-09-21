@@ -95,7 +95,7 @@ export const debutTracks = [
     "Forever Winter",
     "Run",
     "The Very First Night",
-    "All Too Well (10 Minute Veresion)"
+    "All Too Well (10 Minute Version)"
   ];
   export const tracks1989=[
     "Welcome To New York",
