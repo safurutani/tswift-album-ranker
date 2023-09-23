@@ -1,13 +1,13 @@
 {
-  "main.css": "/tswift-album-ranker/static/css/main.5b2a531f.chunk.css",
-  "main.js": "/tswift-album-ranker/static/js/main.15a14140.chunk.js",
-  "main.js.map": "/tswift-album-ranker/static/js/main.15a14140.chunk.js.map",
+  "main.css": "/tswift-album-ranker/static/css/main.ffbc52ce.chunk.css",
+  "main.js": "/tswift-album-ranker/static/js/main.648971ce.chunk.js",
+  "main.js.map": "/tswift-album-ranker/static/js/main.648971ce.chunk.js.map",
   "static/js/1.96f9bec5.chunk.js": "/tswift-album-ranker/static/js/1.96f9bec5.chunk.js",
   "static/js/1.96f9bec5.chunk.js.map": "/tswift-album-ranker/static/js/1.96f9bec5.chunk.js.map",
   "runtime~main.js": "/tswift-album-ranker/static/js/runtime~main.1c16da87.js",
   "runtime~main.js.map": "/tswift-album-ranker/static/js/runtime~main.1c16da87.js.map",
-  "static/css/main.5b2a531f.chunk.css.map": "/tswift-album-ranker/static/css/main.5b2a531f.chunk.css.map",
+  "static/css/main.ffbc52ce.chunk.css.map": "/tswift-album-ranker/static/css/main.ffbc52ce.chunk.css.map",
   "index.html": "/tswift-album-ranker/index.html",
-  "precache-manifest.1eb70e61b8d7590412572dfaaf18c0bc.js": "/tswift-album-ranker/precache-manifest.1eb70e61b8d7590412572dfaaf18c0bc.js",
+  "precache-manifest.850a8ae671595e701f97cc13a99b21bd.js": "/tswift-album-ranker/precache-manifest.850a8ae671595e701f97cc13a99b21bd.js",
   "service-worker.js": "/tswift-album-ranker/service-worker.js"
 }
