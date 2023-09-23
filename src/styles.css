@@ -374,7 +374,7 @@
   #resultTitles {
     width: 95%;
   }
-  @media (max-width: 784px) {
+  @media (max-width: 734px) {
     .buttonContainer {
       display:block;
     }
