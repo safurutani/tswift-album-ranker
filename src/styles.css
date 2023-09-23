@@ -272,7 +272,7 @@
     width: auto;
   }
   h2 {
-    width: 56%;
+    width: 53%;
     text-align: right;
   }
   .underline {
@@ -304,13 +304,11 @@
     display:flex;
   }
   #album {
-    width:50%;
+    width:724px;
     margin:auto;
     border-radius:15px;
     padding:15px;
     margin-top:20px;
-    max-width:720px;
-    min-width:424px;
   }
   
   .list {
@@ -380,7 +378,17 @@
     .buttonContainer {
       display:block;
     }
+    #album {
+      width: 440px;
+    }
     .albumButton {
       text-align:center;
+    }
+    #resetBox {
+      width: 46%;
+      display: flex;
+    }
+    h2 {
+      width: 55%;
     }
   }
