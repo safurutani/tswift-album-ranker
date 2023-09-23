@@ -267,12 +267,13 @@
     color:var(--midnights-light-blue);
   }
   
-  h1,h2 {
+  h1 {
     text-align:center;
     width: auto;
   }
   h2 {
-    margin: auto;
+    width: 56%;
+    text-align: right;
   }
   .underline {
     text-decoration: underline;
@@ -330,15 +331,17 @@
   }
   #albumHeader {
     display:flex;
-    margin:auto;
-    justify-content: center;
+  }
+  #resetBox {
+    width: 46%;
+    display: flex;
   }
   #reset {
     text-align: center;
     width: 80px;
     border: 1px solid;
     padding:4px;
-    margin: auto 0;
+    margin: auto 0 auto auto;
   }
   #reset:hover {
     cursor: pointer;

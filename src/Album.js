@@ -6,9 +6,12 @@ class Album extends React.Component {
         <div id="album" className={this.props.albumTheme}> 
           <div id="albumHeader">
             <h2>{this.props.title}</h2>
-            <div id="reset" onClick={reset} className={this.props.inputTheme}>
-              RESET
-            </div>
+            <div id="resetBox">
+              <div id="reset" onClick={reset} className={this.props.inputTheme}>
+                RESET
+              </div>
+            </div>        
+            
           </div>
           <ul>
             {this.props.albumTracks.map((song, index) => (
