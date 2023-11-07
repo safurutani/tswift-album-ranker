@@ -3,7 +3,7 @@ class Results extends React.Component {
     render() {
       return(
         <div id="results">
-          <h2 className="underline">Final Album Ranking</h2>
+          <h2 className="underline" id="finalHeader">Final Album Ranking</h2>
           <div id="rankings"> 
             <div id="resultTitles">    
             {this.props.albums.map((title) =>(
