@@ -377,6 +377,7 @@
 #finalHeader {
   margin: auto;
   text-align: center;
+  border:solid;
 }
   @media (max-width: 734px) {
     .buttonContainer {
