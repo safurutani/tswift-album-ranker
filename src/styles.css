@@ -374,10 +374,10 @@
   #resultTitles {
     width: 95%;
   }
-#finalHeader {
-  margin: auto;
-  text-align: center;
-}
+  #finalHeader {
+    margin: auto;
+    text-align: center;
+  }
   @media (max-width: 734px) {
     .buttonContainer {
       display:block;
