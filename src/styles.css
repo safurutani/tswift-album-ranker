@@ -58,6 +58,12 @@
     --midnights-maroon:#822E34;
     --midnights-brown:#A66B59;
     --midnights-white:#EDECE8;
+
+    --ttpd-brown: #312C27;
+    --ttpd-gray: #DDD9D4;
+    --ttpd-white: #EFEBE8;
+    --ttpd-brown-gray: #7D746B;
+
     
   }
   /*Themes for the background web page*/
@@ -101,6 +107,11 @@
     background:var(--midnights-navy);
     color:var(--midnights-brown);
   }
+  .ttpdWebTheme {
+    background:var(--ttpd-white);
+    color:var(--ttpd-brown);
+  }
+
   /*Themes for the central Album content*/
   .debutAlbumTheme {
     background:var(--debut-teal);
@@ -141,6 +152,10 @@
   .midnightsAlbumTheme {
     background:var(--midnights-light-blue);
     color:var(--midnights-white);
+  }
+  .ttpdAlbumTheme {
+    background: var(--ttpd-brown-gray);
+    color: var(--ttpd-gray);
   }
   
   /*Themes for the input boxes*/
@@ -184,6 +199,10 @@
     background:var(--midnights-maroon);
     color:var(--midnights-white);
   }
+  .ttpdInputTheme {
+    background: white;
+    color: black;
+  }
   /*Themes for the album buttons getting hovered*/
   .debutButtonHover:hover {
     background:var(--debut-tan);
@@ -224,6 +243,10 @@
   .midnightsButtonHover:hover {
     background:var(--midnights-brown);
     color:var(--midnights-navy);
+  }
+  .ttpdButtonHover:hover {
+    background:var(--ttpd-brown);
+    color:var(--ttpd-white);
   }
   /*Themes for when you hover the submit button*/
   .debutSubmitHover:hover {
@@ -266,6 +289,10 @@
     background:var(--midnights-white);
     color:var(--midnights-light-blue);
   }
+  .ttpdSubmitHover:hover {
+    background:var(--ttpd-gray);
+    color:var(--ttpd-brown-gray);
+  }
   
   h1 {
     text-align:center;
@@ -302,6 +329,11 @@
   }
   .buttonContainer {
     display:flex;
+  }
+  .ttpdButton {
+    margin: -10px auto ;
+    display: flex;
+    justify-content: center;
   }
   #album {
     width:724px;
@@ -362,10 +394,11 @@
     width: 50%;
     margin: auto;
     margin-top: 22px;
+    max-width: 400px;
   }
   #rankings {
     display:flex;
-    width: 20%;
+    width: 80%;
     font-size: 20px;
     margin:auto;
     padding: 14px;
@@ -382,6 +415,11 @@
   @media (max-width: 734px) {
     .buttonContainer {
       display:block;
+    }
+    .ttpdButton {
+      display: block;
+      margin: -10px auto ;
+      width: 454px; /* Make the last buttonContainer take up full width */
     }
     #album {
       width: 440px;

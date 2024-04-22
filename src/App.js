@@ -3,7 +3,7 @@ import $ from 'jquery'
 import Album from './Album'
 import AlbumSelection from './AlbumSelection'
 import Results from './Results'
-import {debutTracks, fearlessTracks, speaknowTracks, redTracks, tracks1989, reputationTracks, loverTracks, folkloreTracks, evermoreTracks, midnightsTracks} from './tracklists'
+import {debutTracks, fearlessTracks, speaknowTracks, redTracks, tracks1989, reputationTracks, loverTracks, folkloreTracks, evermoreTracks, midnightsTracks, ttpdTracks} from './tracklists'
 class App extends React.Component {
     constructor(props) {
       super(props);
@@ -17,6 +17,7 @@ class App extends React.Component {
       this.buttonClick8 = this.buttonClick8.bind(this);
       this.buttonClick9 = this.buttonClick9.bind(this);
       this.buttonClick10 = this.buttonClick10.bind(this);
+      this.buttonClick11 = this.buttonClick11.bind(this);
       this.resetToDefault = this.resetToDefault.bind(this);
       this.handleInputChange = this.handleInputChange.bind(this);
       this.calculateAlbumScore = this.calculateAlbumScore.bind(this);
@@ -243,6 +244,39 @@ class App extends React.Component {
           input20: 5,
           input21: 5
         },
+        ttpd: {
+          input1: 5,
+          input2: 5,
+          input3: 5,
+          input4: 5,
+          input5: 5,
+          input6: 5,
+          input7: 5,
+          input8: 5,
+          input9: 5,
+          input10: 5,
+          input11: 5,
+          input12: 5,
+          input13: 5,
+          input14: 5,
+          input15: 5,
+          input16: 5,
+          input17: 5,
+          input18: 5,
+          input19: 5,
+          input20: 5,
+          input21: 5,
+          input22: 5,
+          input23: 5,
+          input24: 5,
+          input25: 5,
+          input26: 5,
+          input27: 5,
+          input28: 5,
+          input29: 5,
+          input30: 5,
+          input31: 5,
+        },
         scores: {
           debutScore: 5,
           fearlessScore: 5,
@@ -253,7 +287,8 @@ class App extends React.Component {
           loverScore: 5,
           folkloreScore: 5,
           evermoreScore: 5,
-          midnightsScore: 5
+          midnightsScore: 5,
+          ttpdScore: 5,
         },
         finalAlbumRanking: [],
         finalAlbumScores: []
@@ -380,6 +415,18 @@ class App extends React.Component {
                 reset={this.resetToDefault}
                 />); 
     };
+    ttpdContent = () => {
+      return (<Album 
+                title="The Tortured Poets Department" 
+                name="ttpd"
+                albumTracks={ttpdTracks} 
+                albumTheme="ttpdAlbumTheme"
+                inputTheme="ttpdInputTheme"
+                inputState={this.state.ttpd}
+                onInputChange={this.handleInputChange}
+                reset={this.resetToDefault}
+                />); 
+    };
     
     results = () => {
       return(<Results 
@@ -476,6 +523,15 @@ class App extends React.Component {
         $('#submit').addClass('midnightsSubmitHover');
         $('.AlbumButton').addClass('midnightsButtonHover')
       }
+    buttonClick11 = () => {
+      $('body').removeClass(this.state.webTheme);
+      $('#submit').removeClass(this.state.submitHover);
+      $('.AlbumButton').removeClass(this.state.buttonHover);
+      this.setState({selectedAlbum: this.ttpdContent, webTheme:"ttpdWebTheme", albumTheme: "ttpdAlbumTheme", submitHover: "ttpdSubmitHover", buttonHover: "ttpdButtonHover", albumName:"ttpd"});
+      $('body').addClass('ttpdWebTheme');
+      $('#submit').addClass('ttpdSubmitHover');
+      $('.AlbumButton').addClass('ttpdButtonHover')
+    }
     getSubmitClasses = ()=> {
       const { albumTheme, submitHover} = this.state;
       const str = albumTheme + " " + submitHover;
@@ -539,7 +595,7 @@ class App extends React.Component {
       });
     }
     handleSubmit = () => {
-      const titleList = ["debut", "fearless", "speaknow", "red", "x1989", "reputation", "lover", "folklore", "evermore", "midnights"];
+      const titleList = ["debut", "fearless", "speaknow", "red", "x1989", "reputation", "lover", "folklore", "evermore", "midnights", "ttpd"];
       titleList.forEach((album) => {
         this.calculateAlbumScore(album);
       });
@@ -555,6 +611,7 @@ class App extends React.Component {
         "folklore": prevState.scores.folkloreScore,
         "evermore": prevState.scores.evermoreScore,
         "Midnights": prevState.scores.midnightsScore,
+        "The Tortured Poets Department": prevState.scores.ttpdScore
       };
         
       const rankingsArr = Object.entries(rankings);
@@ -587,6 +644,7 @@ class App extends React.Component {
             handleClick8={this.buttonClick8}
             handleClick9={this.buttonClick9}
             handleClick10={this.buttonClick10}
+            handleClick11={this.buttonClick11}
             />
           {this.state.selectedAlbum()}
           <div id="submit" className={this.getSubmitClasses()} onClick={this.handleSubmit}>
