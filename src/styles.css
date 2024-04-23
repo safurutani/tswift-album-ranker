@@ -378,9 +378,9 @@
     background: red;
     color: white;
   }
-  #submit {
+  #submit, #login-button, #create-user-button {
     text-align: center;
-    width:100px;
+    width:160px;
     padding:10px;
     margin:auto;
     margin-top: 20px;
@@ -412,6 +412,98 @@
     text-align: center;
     width: 100%;
   }
+  #login-link {
+    right: 0;
+    top: 0;
+    margin-right: 20px;
+    margin-top: 20px;
+    position: absolute;
+  }
+  #login-link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  #close-login, #close-create-user {
+    margin-left: 300px;
+    padding: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+  }
+  #close-login:hover, #close-create-user:hover {
+    cursor: pointer;
+  }
+  #login, #create-user{
+    width: 100%;
+    border: solid white 1px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    margin:auto;
+    padding-top: 12px;
+    padding-bottom: 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20%;
+  }
+  .email-container, .password-container {
+    width: 214px;
+    text-align: left;
+    margin-bottom: 10px;
+    align-items: center;
+    margin: 10px auto;
+  }
+  #login-button, #create-user-button {
+    border-color: white;
+    background-color: lavender;
+    box-shadow: none;
+    font-family: 'Quattrocento';
+    font-size: 18px;
+  }
+  #login-button:hover, #create-user-button:hover {
+    cursor: pointer;
+    background-color: lavenderblush;
+  }
+  .email, .password {
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .input-email, .input-password {
+    width: 200px;
+    text-align: left;
+    padding: 6px;
+    font-weight: 400;
+    display: block;
+    border-radius: 5px;
+    border-width: 0;
+    background-color:lavender;
+  }
+  .new-user {
+    display: block;
+    font-weight: 400;
+    margin-right: 22px;
+    margin-top: 32px;
+    text-align: center;
+    width: 100%;
+  }
+  #create-account-button {
+    border-width: 0;
+    background-color: white;
+    font-family: 'Quattrocento';
+    font-size: 16px;
+  }
+  #create-account-button:hover {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+  }
+  #create-user-title {
+    width: auto;
+    text-align:center;
+  }
   @media (max-width: 734px) {
     .buttonContainer {
       display:block;
@@ -433,5 +525,8 @@
     }
     h2 {
       width: 55%;
+    }
+    #login-link {
+      margin-top: 2px;
     }
   }

@@ -3,6 +3,8 @@ import $ from 'jquery'
 import Album from './Album'
 import AlbumSelection from './AlbumSelection'
 import Results from './Results'
+import { Login } from './Login'
+import { CreateUser } from './CreateUser'
 import {debutTracks, fearlessTracks, speaknowTracks, redTracks, tracks1989, reputationTracks, loverTracks, folkloreTracks, evermoreTracks, midnightsTracks, ttpdTracks} from './tracklists'
 class App extends React.Component {
     constructor(props) {
@@ -22,6 +24,10 @@ class App extends React.Component {
       this.handleInputChange = this.handleInputChange.bind(this);
       this.calculateAlbumScore = this.calculateAlbumScore.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.showLogin = this.showLogin.bind(this);
+      this.closeLogin = this.closeLogin.bind(this);
+      this.showCreateUser = this.showCreateUser.bind(this);
+      this.closeCreateUser = this.closeCreateUser.bind(this);
       
       this.state = {
         selectedAlbum: this.debutContent,
@@ -31,6 +37,8 @@ class App extends React.Component {
         inputTheme: "debutInputTheme",
         submitHover: "debutSubmitHover",
         buttonHover: "debutButtonHover",   
+        loginVisible: false,
+        createUserVisible: false,
         debut: {
           input1: 5,
           input2: 5,
@@ -628,10 +636,33 @@ class App extends React.Component {
       });
       
     }
-    render() {    
+    showLogin = () => {
+      this.setState({
+        loginVisible: true,
+        createUserVisible: false
+      })
+    }
+    closeLogin = () => {
+      this.setState({
+        loginVisible: false
+      })
+    }
+    showCreateUser = () => {
+      this.setState({
+        createUserVisible: true
+      })
+      this.closeLogin();
+    }
+    closeCreateUser = () => {
+      this.setState({
+        createUserVisible: false
+      })
+    }
+    render() {   
       return (
         <div className={this.state.webTheme}>
           <h1>Taylor Swift Album Ranking</h1>
+          <text id="login-link" onClick={this.showLogin}>Sign In</text>
           <AlbumSelection 
             classes={this.getAlbumButtonClasses()}
             handleClick1={this.buttonClick1}
@@ -650,6 +681,9 @@ class App extends React.Component {
           <div id="submit" className={this.getSubmitClasses()} onClick={this.handleSubmit}>
             GET FINAL RANKING
           </div>
+          {this.state.loginVisible && !this.state.createUserVisible && <Login closeLogin={this.closeLogin} showCreateUser={this.showCreateUser}/>}
+          
+          {this.state.createUserVisible && <CreateUser closeLogin={this.closeLogin} closeCreateUser={this.closeCreateUser} />}
         </div>
       );
     }
