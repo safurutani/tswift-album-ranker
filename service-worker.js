@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/tswift-album-ranker/precache-manifest.ae696db7fa8c52787e3fa73cbd2e8450.js"
+  "/tswift-album-ranker/precache-manifest.b1aaec69bf02036d1b3dc97404af3622.js"
 );
 
 workbox.clientsClaim();

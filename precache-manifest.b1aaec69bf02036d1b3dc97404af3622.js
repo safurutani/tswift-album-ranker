@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "e9dfbb8c42dd235b1f17",
-    "url": "/tswift-album-ranker/static/css/main.02123cdc.chunk.css"
+    "revision": "f50f73c8be35fc358f0b",
+    "url": "/tswift-album-ranker/static/css/main.f07f8c09.chunk.css"
   },
   {
-    "revision": "e9dfbb8c42dd235b1f17",
+    "revision": "f50f73c8be35fc358f0b",
     "url": "/tswift-album-ranker/static/js/main.5a27cc6e.chunk.js"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/tswift-album-ranker/static/js/2.fc8f4f12.chunk.js"
   },
   {
-    "revision": "70abf660c261a3fe48c6da4086936e52",
+    "revision": "fcd4d91ead4948b143237fcdc42e86a0",
     "url": "/tswift-album-ranker/index.html"
   }
 ];
