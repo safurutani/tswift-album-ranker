@@ -1,41 +1,46 @@
 import React from "react"
-class Album extends React.Component {
-    render() {
-      const {name, inputState, onInputChange, reset} = this.props;
-      return (
-        <div id="album" className={this.props.albumTheme}> 
-          <div id="albumHeader">
-            <h2>{this.props.title}</h2>
-            <div id="resetBox">
-              <div id="reset" onClick={reset} className={this.props.inputTheme}>
-                RESET
-              </div>
-            </div>        
-            
-          </div>
-          <ul>
-            {this.props.albumTracks.map((song, index) => (
-              <div className="list" key={index}>
-                <div className="song">{song}</div>
-                <div>-----</div>
-                <div className="inputContainer">
-                  <input
-                    id={name + (index + 1)}
-                    className={this.props.inputTheme}
-                    type="number"
-                    value={inputState["input"+(index+1)]}
-                    step={0.5}
-                    min={0}
-                    max={10}
-                    onChange={(e) => onInputChange(name,"input" + (index +1), e.target.value)}
-                  />
-                </div>
-              </div>
-            ))}
-          </ul>
+import { useRatingsContext } from "./RatingsContext";
+const Album = ({
+  name,
+  albumTheme,
+  title,
+  albumTracks,
+  inputTheme
+}) => {
+    const { ratings, resetRatings, updateRatings } = useRatingsContext();
+    return (
+      <div id="album" className={albumTheme}> 
+        <div id="albumHeader">
+          <h2>{title}</h2>
+          <div id="resetBox">
+            <div id="reset" onClick={()=> resetRatings(name)} className={inputTheme}>
+              RESET
+            </div>
+          </div>        
           
         </div>
-      );
-    }
+        <ul>
+          {albumTracks.map((song, index) => (
+            <div className="list" key={index}>
+              <div className="song">{song}</div>
+              <div>-----</div>
+              <div className="inputContainer">
+                <input
+                  id={name + (index + 1)}
+                  className={inputTheme}
+                  type="number"
+                  value={ratings[name][`input${index + 1}`]}
+                  step={1}
+                  onChange={(e) => {
+                    updateRatings(name, `input${index + 1}`, e.target.value)}
+                  }
+                />
+              </div>
+            </div>
+          ))}
+        </ul>
+        
+      </div>
+    );
   }
-  export default Album
+  export default Album;
