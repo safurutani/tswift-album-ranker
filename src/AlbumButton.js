@@ -1,11 +1,9 @@
 import React from "react"
-class AlbumButton extends React.Component {
-    render() {
-      return (
-        <div className={this.props.classes} onClick={this.props.clicked}>
-          <div>{this.props.title}</div>
-        </div>
-      );
-    }
+const AlbumButton = ({classes, clicked, title}) => {
+    return (
+      <div className={classes} onClick={clicked}>
+        <div>{title}</div>
+      </div>
+    );
   }
   export default AlbumButton

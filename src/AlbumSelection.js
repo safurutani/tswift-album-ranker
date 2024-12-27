@@ -1,37 +1,48 @@
 import AlbumButton from './AlbumButton'
 import React from "react"
-class AlbumSelection extends React.Component {
-    render() {    
-      return(
-        <div>
-          <div id="albumSelection">
-            <div className="buttonContainer">
-              <AlbumButton title="Taylor Swift" clicked={this.props.handleClick1} classes={this.props.classes} />
-              <AlbumButton title="Fearless" clicked={this.props.handleClick2} classes={this.props.classes} />
-            </div>
-            <div className="buttonContainer">
-              <AlbumButton title="Speak Now" clicked={this.props.handleClick3} classes={this.props.classes} />
-              <AlbumButton title="Red" clicked={this.props.handleClick4} classes={this.props.classes} />
-            </div>
-            <div className="buttonContainer">
-              <AlbumButton title="1989" clicked={this.props.handleClick5} classes={this.props.classes} />
-              <AlbumButton title="Reputation" clicked={this.props.handleClick6} classes={this.props.classes} />
-            </div>
-            <div className="buttonContainer">
-              <AlbumButton title="Lover" clicked={this.props.handleClick7} classes={this.props.classes} />
-              <AlbumButton title="folklore" clicked={this.props.handleClick8} classes={this.props.classes} />
-            </div>
-            <div className="buttonContainer">
-              <AlbumButton title="evermore" clicked={this.props.handleClick9} classes={this.props.classes} />
-              <AlbumButton title="Midnights" clicked={this.props.handleClick10} classes={this.props.classes} />
-            </div>
-            
+const AlbumSelection = (
+  {handleClick1, 
+  handleClick2, 
+  handleClick3, 
+  handleClick4, 
+  handleClick5, 
+  handleClick6, 
+  handleClick7,
+  handleClick8, 
+  handleClick9,
+  handleClick10,
+  handleClick11,
+  classes}
+) => { 
+    return(
+      <div>
+        <div id="albumSelection">
+          <div className="buttonContainer">
+            <AlbumButton title="Taylor Swift" clicked={handleClick1} classes={classes} />
+            <AlbumButton title="Fearless" clicked={handleClick2} classes={classes} />
           </div>
-          <div className="ttpdButton">
-              <AlbumButton title="THE TORTURED POETS DEPARTMENT" clicked={this.props.handleClick11} classes={this.props.classes} />
-            </div>
+          <div className="buttonContainer">
+            <AlbumButton title="Speak Now" clicked={handleClick3} classes={classes} />
+            <AlbumButton title="Red" clicked={handleClick4} classes={classes} />
+          </div>
+          <div className="buttonContainer">
+            <AlbumButton title="1989" clicked={handleClick5} classes={`${classes} two-line`} />
+            <AlbumButton title="Reputation" clicked={handleClick6} classes={classes} />
+          </div>
+          <div className="buttonContainer">
+            <AlbumButton title="Lover" clicked={handleClick7} classes={`${classes} two-line`} />
+            <AlbumButton title="folklore" clicked={handleClick8} classes={classes} />
+          </div>
+          <div className="buttonContainer">
+            <AlbumButton title="evermore" clicked={handleClick9} classes={`${classes} two-line`} />
+            <AlbumButton title="Midnights" clicked={handleClick10} classes={classes} />
+          </div>
+          
         </div>
-      );
-    }
+        <div className="ttpdButton">
+            <AlbumButton title="THE TORTURED POETS DEPARTMENT" clicked={handleClick11} classes={classes} />
+          </div>
+      </div>
+    );
   }
   export default AlbumSelection

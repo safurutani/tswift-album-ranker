@@ -21,7 +21,7 @@
     --evermore-brown:#73554d;
     --evermore-rust:#592823;
     --evermore-light-rust:#9c4c2b;
-    --evermore-beige:#d3b6a4;
+    --evermore-beige:#E6D2C7;
     
     --reputation-black:#060606;
     --reputation-dark-gray:#4C4C4C;
@@ -47,14 +47,14 @@
     --folklore-moss:#464E27;
     --folklore-black:#1C1C1C;
     
-    --1989-tan:#CCBB98;
-    --1989-purple:#9B7688;
+    --1989-tan:#DCD9C6;
+    --1989-purple:#916980;
     --1989-navy:#344455;
     --1989-brown:#774535;
     --1989-white:#E8E8DD;
     
     --midnights-navy:#0E1B48;
-    --midnights-light-blue:#819BB0;
+    --midnights-light-blue:#516C81;
     --midnights-maroon:#822E34;
     --midnights-brown:#A66B59;
     --midnights-white:#EDECE8;
@@ -62,7 +62,7 @@
     --ttpd-brown: #312C27;
     --ttpd-gray: #DDD9D4;
     --ttpd-white: #EFEBE8;
-    --ttpd-brown-gray: #7D746B;
+    --ttpd-brown-gray: #635D54;
 
     
   }
@@ -220,7 +220,7 @@
     background:var(--red-dark);
     color:var(--red-beige);
   }
-  .button1989Hover:hover {
+  .x1989ButtonHover:hover {
     background:var(--1989-navy);
     color:var(--1989-white);
   }
@@ -294,6 +294,9 @@
     color:var(--ttpd-brown-gray);
   }
   
+  html {
+    height: 100%;
+  }
   h1 {
     text-align:center;
     width: auto;
@@ -312,6 +315,7 @@
     width:100%;
     font-family: "Quattrocento";
     font-weight: bold;
+    height: 100%;
   }
   #albumSelection {
     margin: 10px;
@@ -329,9 +333,9 @@
   }
   .buttonContainer {
     display:flex;
+    
   }
   .ttpdButton {
-    margin: -10px auto ;
     display: flex;
     justify-content: center;
   }
@@ -412,14 +416,27 @@
     text-align: center;
     width: 100%;
   }
+  .full-height {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
   @media (max-width: 734px) {
+    #albumSelection, .ttpdButton {
+      width: 435px;
+      margin: auto;
+    }
     .buttonContainer {
       display:block;
     }
+    .two-line::after {
+      content: " ";
+      display: block;
+      height: 1em;
+    }
     .ttpdButton {
       display: block;
-      margin: -10px auto ;
-      width: 454px; /* Make the last buttonContainer take up full width */
     }
     #album {
       width: 440px;
