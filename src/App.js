@@ -4,10 +4,22 @@ import AlbumSelection from './AlbumSelection';
 import Results from './Results';
 import {debutTracks, fearlessTracks, speaknowTracks, redTracks, tracks1989, reputationTracks, loverTracks, folkloreTracks, evermoreTracks, midnightsTracks, ttpdTracks} from './tracklists';
 import { useRatingsContext } from './RatingsContext';
-
+import AuthModal from './AuthModal';
+import { useAuth } from './AuthContext';
 const App = () => {  
   // Get ratings from context api
-  const {ratings} = useRatingsContext(); 
+  const {ratings, saveRatingsToFirestore} = useRatingsContext(); 
+  const { user, logout } = useAuth();
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [mode, setMode] = useState(false);
+
+  const openAuthModal = (isRegister) => {
+    setMode(isRegister);
+    setIsAuthModalOpen(true);
+
+  };
+  const closeAuthModal = () => setIsAuthModalOpen(false);
+
 
   // Album Scores State
   const [albumScores, setAlbumScores] = useState({
@@ -284,14 +296,28 @@ const App = () => {
   };
 
   // Calculate final ranking and display results component
-  const handleSubmit = () => {  
+  const handleSubmit = async () => {  
     setCurrentTheme((prevState) => ({
       ...prevState,
       selectedAlbum: results()
     }));
+    if (user) {
+      await saveRatingsToFirestore(ratings);
+    }
   };
     return (
       <div className={`${currentTheme.webTheme} full-height`}>
+        <div className={`${currentTheme.webTheme} login-register`}>
+        {user ? (
+            <button className='logout-link' onClick={logout}>Logout</button>
+          ) : (
+            <div>
+            <button className='login-link' onClick={() => {openAuthModal(false)}}>Login</button>
+            <button className='register-link' onClick={() => {openAuthModal(true)}}>Register</button>
+            </div>
+          )}
+        </div>
+        <AuthModal show={isAuthModalOpen} onClose={closeAuthModal} mode={mode} />
         <h1>Taylor Swift Album Ranking</h1>
         <AlbumSelection 
           classes={`${currentTheme.albumName}ButtonHover albumButton`}

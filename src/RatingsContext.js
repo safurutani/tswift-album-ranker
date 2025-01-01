@@ -1,5 +1,6 @@
 import React, {createContext, useContext, useState} from "react";
-
+import { auth, db } from './firebaseConfig';
+import { doc, setDoc, getDoc } from "firebase/firestore";
 const RatingsContext = createContext();
 
 export const useRatingsContext = () => useContext(RatingsContext);
@@ -283,13 +284,53 @@ export const RatingsProvider = ({children}) => {
           },
       }));
   };
-    
+  const saveRatingsToFirestore = async (ratings) => {
+    const user = auth.currentUser;
+    if (!user) {
+      console.error("User is not authenticated");
+      return;
+    }
+
+    const userDoc = doc(db, "ratings", user.uid);
+
+    try {
+      await setDoc(userDoc, { ratings });
+      console.log("Ratings saved successfully!");
+    } catch (error) {
+      console.error("Error saving ratings:", error);
+    }
+  };  
+  const getUserRatings = async () => {
+    const user = auth.currentUser;
+    if (!user) {
+      console.error("User is not authenticated");
+      return null;
+    }
+  
+    const userDoc = doc(db, "ratings", user.uid);
+  
+    try {
+      const docSnap = await getDoc(userDoc);
+      if (docSnap.exists()) {
+        console.log("User ratings:", docSnap.data());
+        return docSnap.data().ratings;
+      } else {
+        console.log("No ratings found for this user.");
+        return null;
+      }
+    } catch (error) {
+      console.error("Error fetching ratings:", error);
+      return null;
+    }
+  }
   return(
     <RatingsContext.Provider 
     value={{
       ratings, setRatings, 
       resetRatings, 
       updateRatings, 
+      saveRatingsToFirestore,
+      getUserRatings
     }}>
         {children}
     </RatingsContext.Provider>
