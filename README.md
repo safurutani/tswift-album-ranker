@@ -27,4 +27,4 @@ This project is a Taylor Swift album ranker built using React. It allows users t
 4. Start the development server: npm start
 
 ## Live Demo
-A live demo of the project is available [here](https://vercel.com/safurutanis-projects/tswift-album-ranker).
+A live demo of the project is available [here](https://tswift-album-ranker.vercel.app/).
