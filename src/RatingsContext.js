@@ -314,13 +314,13 @@ export const RatingsProvider = ({children}) => {
       console.error("Error saving ratings:", error);
     }
   };  
-  const getUserRatings = async (uid) => {
-    if (!uid) {
+  const getUserRatings = async (userId) => {
+    if (!userId) {
       console.error("User is not authenticated");
       return null;
     }
   
-    const userDoc = doc(db, "ratings", user.uid);
+    const userDoc = doc(db, "ratings", userId);
   
     try {
       const docSnap = await getDoc(userDoc);
