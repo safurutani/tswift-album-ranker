@@ -7,7 +7,18 @@ const Album = ({
   albumTracks,
   inputTheme
 }) => {
-    const { ratings, resetRatings, updateRatings } = useRatingsContext();
+    const { ratings, resetRatings, updateRatings, setRatings, getUserRatings } = useRatingsContext();
+    
+    useEffect(() => {
+      const loadRatings = async () => {
+      const savedRatings = await getUserRatings();
+      if (savedRatings) {
+        setRatings(savedRatings);
+      }
+      };
+      loadRatings();
+    }, []);
+
     return (
       <div id="album" className={albumTheme}> 
         <div id="albumHeader">
