@@ -1,12 +1,14 @@
-import React, {createContext, useContext, useState} from "react";
+import React, {createContext, useContext, useState, useEffect} from "react";
 import { auth, db } from './firebaseConfig';
 import { doc, setDoc, getDoc } from "firebase/firestore";
+import { onAuthStateChanged } from "firebase/auth";
 const RatingsContext = createContext();
 
 export const useRatingsContext = () => useContext(RatingsContext);
 
 export const RatingsProvider = ({children}) => {
   // Ratings for every song on every album
+  const [user, setUser] = useState(null);
   const [ratings, setRatings] = useState({
     debut: {
         input1: 5,
@@ -256,6 +258,19 @@ export const RatingsProvider = ({children}) => {
     }
   });
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      if (currentUser) {
+        const ratingsData = getUserRatings(currentUser.uid);
+        if (ratingsData) {
+          setRatings(prevRatings => ({...prevRatings, ...ratingsData}));
+        }
+      }
+    });
+    return () => unsubscribe();
+    }, []);
+
   // Set the ratings for current album to 5
   const resetRatings = (albumName) => {
       setRatings((prevRatings) => ({
@@ -285,7 +300,6 @@ export const RatingsProvider = ({children}) => {
       }));
   };
   const saveRatingsToFirestore = async (ratings) => {
-    const user = auth.currentUser;
     if (!user) {
       console.error("User is not authenticated");
       return;
@@ -300,9 +314,8 @@ export const RatingsProvider = ({children}) => {
       console.error("Error saving ratings:", error);
     }
   };  
-  const getUserRatings = async () => {
-    const user = auth.currentUser;
-    if (!user) {
+  const getUserRatings = async (uid) => {
+    if (!uid) {
       console.error("User is not authenticated");
       return null;
     }
@@ -316,16 +329,17 @@ export const RatingsProvider = ({children}) => {
         return docSnap.data().ratings;
       } else {
         console.log("No ratings found for this user.");
-        return null;
+        return {};
       }
     } catch (error) {
       console.error("Error fetching ratings:", error);
-      return null;
+      return {};
     }
   }
   return(
     <RatingsContext.Provider 
     value={{
+      user, setUser,
       ratings, setRatings, 
       resetRatings, 
       updateRatings, 

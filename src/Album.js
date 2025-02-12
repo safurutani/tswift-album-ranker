@@ -7,17 +7,24 @@ const Album = ({
   albumTracks,
   inputTheme
 }) => {
-    const { ratings, resetRatings, updateRatings, setRatings, getUserRatings } = useRatingsContext();
+    const { ratings, resetRatings, updateRatings, setRatings, getUserRatings, user } = useRatingsContext();
     
     useEffect(() => {
       const loadRatings = async () => {
-      const savedRatings = await getUserRatings();
-      if (savedRatings) {
-        setRatings(savedRatings);
-      }
+        if (!user) {
+          return;
+        }
+        try {
+          const savedRatings = await getUserRatings(user.uid);
+          if (savedRatings) {
+            setRatings(savedRatings);
+          }
+        } catch (error) {
+          console.error("Error loading ratings:", error);
+        }
       };
       loadRatings();
-    }, []);
+    }, [user]);
 
     return (
       <div id="album" className={albumTheme}> 
@@ -31,7 +38,8 @@ const Album = ({
           
         </div>
         <ul>
-          {albumTracks.map((song, index) => (
+        {ratings[name] ? (
+          albumTracks.map((song, index) => (
             <div className="list" key={index}>
               <div className="song">{song}</div>
               <div>-----</div>
@@ -48,7 +56,10 @@ const Album = ({
                 />
               </div>
             </div>
-          ))}
+          ))
+        ) : (
+          <div>Loading...</div>
+        )}
         </ul>
         
       </div>
